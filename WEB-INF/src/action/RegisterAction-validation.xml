@@ -1,0 +1,39 @@
+<!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator 1.0.2//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+
+<validators>
+    <field name="user.name">
+        <field-validator type="requiredstring" short-circuit="true">
+            <message>Name is required</message>
+        </field-validator>
+        <field-validator type="regex" >
+        	<param name="regex">^[a-z, A-Z]*$</param>
+        	<message>Name must be string</message>
+        </field-validator>
+    </field>
+    <field name="user.gender">
+        <field-validator type="requiredstring">
+            <message>Gender is required</message>
+        </field-validator>
+    </field>
+    <field name="user.email">
+        <field-validator type="email">
+        	<message>Email Format is not valid</message>
+        </field-validator>
+    </field>
+    <field name="user.phone">
+        <field-validator type="requiredstring" short-circuit="true">
+            <message>Phone is required</message>
+        </field-validator>
+        <field-validator type="regex" short-circuit="true">
+        	<param name="regex">^[0-9]*$</param>
+        	<message>Phone must be integer</message>
+        </field-validator>
+        <field-validator type="stringlength">
+        	<param name="minLength">9</param>
+        	<param name="maxLength">11</param>
+        	<message>Check Phone Number</message>
+        </field-validator>
+    </field>
+</validators>

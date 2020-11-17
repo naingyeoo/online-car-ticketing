@@ -1,0 +1,26 @@
+<!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator 1.0.2//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+
+<validators>
+    <field name="travel.deparaturedate">
+        <field-validator type="requiredstring">
+            <message>Date is required</message>
+        </field-validator>
+    </field>
+    <field name="travel.leavingfrom">
+        <field-validator type="requiredstring">
+            <message>Location is required</message>
+        </field-validator>
+    </field>
+    <field name="travel.goingto">
+        <field-validator type="requiredstring">
+            <message>Location is required</message>
+        </field-validator>
+    </field>
+    <field name="travel.deparaturetime">
+        <field-validator type="requiredstring">
+            <message>Time is required</message>
+        </field-validator>
+    </field>
+</validators>

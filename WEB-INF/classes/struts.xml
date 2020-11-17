@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="true" />
+
+    <package name="action" namespace="/" extends="struts-default">
+        <action name="bookingAction" method="display" class="action.BookingAction">
+            <result name="success">/view/travel.jsp</result>
+            <result name="error">/view/booking.jsp</result>
+            <result name="input">/view/booking.jsp</result>
+        </action>
+        <action name="searchAgain" method="execute" class="action.SearchAgainAction">
+            <result name="success">/view/booking.jsp</result>
+        </action>
+         <action name="chooseAction" method="execute" class="action.ChooseAction">
+            <result name="success">/view/seat.jsp</result>
+        </action>
+        <action name="seatAction" method="execute" class="action.SeatAction">
+            <result name="success">/view/userInfo.jsp</result>
+            <result name="error">/view/seat.jsp</result>
+        </action>
+        <action name="register" method="execute" class="action.RegisterAction">
+            <result name="success">/view/register.jsp</result>
+            <result name="input">/view/userInfo.jsp</result>
+        </action>
+        <action name="confirmAction" method="execute" class="action.ConfirmAction">
+            <result name="success">/view/home.jsp</result>
+        </action>
+    </package>
+    
+    <package name="adminAction" namespace="/" extends="struts-default">
+    	<action name="admin" >
+            <result>adminView/login.jsp</result>
+        </action>
+        <action name="loginAction" method="execute" class="adminAction.LoginAction">
+            <result name="success">/adminView/dashboard.jsp</result>
+            <result name="input">/adminView/login.jsp</result>
+            <result name="error">/adminView/login.jsp</result>
+        </action>
+        <action name="adminChangePasswordAction" method="execute" class="adminAction.AdminChangePasswordAction">
+            <result name="success">/adminView/login.jsp</result>
+            <result name="input">/adminView/adminChangePassword.jsp</result>
+        </action>
+        <action name="displaybusline" method="displaybusline" class="adminAction.DisplayBusLineAction">
+            <result name="success">/adminView/view.jsp</result>
+        </action>
+        <action name="deletebusline" method="deletebusline" class="adminAction.DisplayBusLineAction">
+            <result name="success">/adminView/view.jsp</result>
+        </action>
+        <action name="carryUpdateData" method="carryUpdateData" class="adminAction.DisplayBusLineAction">
+            <result name="success">/adminView/carryupdatedata.jsp</result>
+        </action>
+        <action name="updatebusline" method="execute" class="adminAction.UpdateBusLineAction">
+            <result name="success">/adminView/newupdatedata.jsp</result>
+        </action>
+        <action name="createNewBusLine" method="execute" class="adminAction.CreateNewBusLineAction">
+            <result name="success">/adminView/confirmnewbusline.jsp</result>
+        </action>
+        <action name="displaybookinglist" method="displaybookinglist" class="adminAction.DisplayBookingListAction">
+            <result name="success">/adminView/viewbookinglist.jsp</result>
+        </action>
+        <action name="deletebookinglist" method="deletebookinglist" class="adminAction.DisplayBookingListAction">
+            <result name="success">/adminView/viewbookinglist.jsp</result>
+        </action>
+        <action name="searchbyname" method="searchByName" class="adminAction.DisplayBookingListAction">
+            <result name="success">/adminView/viewbookinglist.jsp</result>
+        </action>
+        <action name="displayservicedata" method="displayservicedata" class="adminAction.DisplayServiceDataAction">
+            <result name="success">/adminView/viewService.jsp</result>
+        </action>
+        <action name="deleteservicedata" method="deleteservicedata" class="adminAction.DisplayServiceDataAction">
+            <result name="success">/adminView/viewService.jsp</result>
+        </action>
+        <action name="createNewServiceData" method="execute" class="adminAction.CreateNewServiceDataAction">
+            <result name="success">/adminView/confirmservicedata.jsp</result>
+        </action>
+        <action name="displayabout" method="displayabout" class="adminAction.DisplayAboutAction">
+            <result name="success">/adminView/viewAbout.jsp</result>
+        </action>
+        <action name="deleteabout" method="deleteabout" class="adminAction.DisplayAboutAction">
+            <result name="success">/adminView/viewAbout.jsp</result>
+        </action>
+        <action name="carryabout" method="carryAbout" class="adminAction.DisplayAboutAction">
+            <result name="success">/adminView/carryaboutdata.jsp</result>
+        </action>
+         <action name="updateabout" method="execute" class="adminAction.UpdateAboutAction">
+            <result name="success">/adminView/newupdateabout.jsp</result>
+        </action>
+        <action name="createNewAbout" method="execute" class="adminAction.CreateNewAbout">
+            <result name="success">/adminView/confirmabout.jsp</result>
+        </action>
+        <action name="displayavailableseat" method="execute" class="adminAction.DisplayAvailableSeatAction">
+            <result name="success">/adminView/selectAvailableSeatInfo.jsp</result>
+        </action>
+        <action name="searchAvailableSeatInfo" method="execute" class="adminAction.SearchAvailableSeatInfoAction">
+            <result name="success">/adminView/displayAvailableSeatInfo.jsp</result>
+            <result name="error">/adminView/selectAvailableSeatInfo.jsp</result>
+            <result name="input">/adminView/selectAvailableSeatInfo.jsp</result>
+        </action>
+        <action name="atosoldAction" method="execute" class="adminAction.UpdateAvailableToSoldOutAction">
+            <result name="success">/adminView/atosoldsuccess.jsp</result>
+        </action>
+        <action name="displaysoldoutseat" method="execute" class="adminAction.DisplaySoldOutSeatAction">
+            <result name="success">/adminView/selectSoldOutSeatInfo.jsp</result>
+        </action>
+        <action name="searchSoldOutSeatInfo" method="execute" class="adminAction.SearchSoldOutSeatInfoAction">
+            <result name="success">/adminView/displaySoldOutSeatInfo.jsp</result>
+            <result name="error">/adminView/selectSoldOutSeatInfo.jsp</result>
+            <result name="input">/adminView/selectSoldOutSeatInfo.jsp</result>
+        </action>
+        <action name="soldtoaAction" method="execute" class="adminAction.UpdateSoldOutToAvailableAction">
+            <result name="success">/adminView/soldtoasuccess.jsp</result>
+        </action>
+        
+    </package>
+</struts>
